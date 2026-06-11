@@ -382,3 +382,74 @@ window.SITE_CONTENT = {
         "desc": {
           "zh": "開始在 X 上發表新興金融與 AI 領域的市場分析,半年累積 81 萬曝光。",
           "en": "Began publishing market analysis on emerging finance and AI, reaching 810K impressions in six months."
+        }
+      },
+      {
+        "when": "2025.09 – 2026.06",
+        "title": {
+          "zh": "金融投資研究社 — 組長",
+          "en": "Finance Labs — Team Lead"
+        },
+        "org": {
+          "zh": "輔仁大學 Fu Jen Finance Labs",
+          "en": "Fu Jen Finance Labs"
+        },
+        "desc": {
+          "zh": "統籌部門課程規劃、主編每週市場週報、獨立主講兩場社課，帶領團隊穩定產出。",
+          "en": "Coordinated curriculum planning, edited the weekly market report, delivered two lectures, and led the team to consistent output."
+        }
+      },
+      {
+        "when": "2024.09 – 2028.06",
+        "title": {
+          "zh": "輔仁大學 企業管理學系",
+          "en": "Fu Jen Catholic University — Business Administration"
+        },
+        "org": {
+          "zh": "商管學院・學士",
+          "en": "College of Management · B.B.A."
+        },
+        "desc": {
+          "zh": "",
+          "en": "Relevant coursework: Marketing Management, Introduction to Business Administration."
+        }
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": {
+      "zh": "聯絡",
+      "en": "Contact"
+    },
+    "heading": {
+      "zh": "歡迎聯繫我",
+      "en": "Let's build something"
+    },
+    "desc": {
+      "zh": "不論是內容合作、專案邀約，或是聊聊 AI 與新興金融市場 — 歡迎隨時找我。",
+      "en": "Whether it's a content collaboration, a project, or just a chat about AI and markets — feel free to reach out."
+    }
+  },
+  "nav": {
+    "about": {
+      "zh": "關於",
+      "en": "About"
+    },
+    "work": {
+      "zh": "作品",
+      "en": "Work"
+    },
+    "journey": {
+      "zh": "經歷",
+      "en": "Journey"
+    },
+    "contact": {
+      "zh": "聯絡",
+      "en": "Contact"
+    }
+  },
+  "footer": {
+    "zh": "© 2026 林立勝 Li-Sheng Lin",
+    "en": "© 2026 Li-Sheng Lin — crafted in liquid glass"
+  }
+};
