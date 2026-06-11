@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林立勝 Li-Sheng Lin — AI × Marketing × Strategy</title>
+<meta name="description" content="林立勝個人網站 — AI、行銷與商業策略的 builder。內容創作、市場研究、AI Agent 實踐。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f8;
+  --ink:#1c1d22;
+  --ink-2:#5b5f68;
+  --ink-3:#9095a0;
+  --glass:rgba(255,255,255,.52);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-border:rgba(255,255,255,.75);
+  --accent-1:#5b6cff;
+  --accent-2:#2bb3d4;
+  --grad:linear-gradient(135deg,#5b6cff 0%,#2bb3d4 100%);
+  --shadow:0 8px 32px rgba(60,70,110,.10),0 1.5px 4px rgba(60,70,110,.06);
+  --shadow-hover:0 20px 60px rgba(60,70,110,.16),0 4px 12px rgba(60,70,110,.08);
+  --radius:24px;
+  --font:'Inter','Noto Sans TC',-apple-system,'PingFang TC','Microsoft JhengHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(91,108,255,.18)}
+
+/* ---------- Aurora background ---------- */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;will-change:transform}
+.blob.b1{width:560px;height:560px;background:radial-gradient(circle,#aeb8ff 0%,transparent 70%);top:-160px;left:-120px;animation:drift1 26s ease-in-out infinite alternate}
+.blob.b2{width:480px;height:480px;background:radial-gradient(circle,#a5e6f2 0%,transparent 70%);top:8%;right:-140px;animation:drift2 32s ease-in-out infinite alternate}
+.blob.b3{width:520px;height:520px;background:radial-gradient(circle,#f6c6dd 0%,transparent 70%);bottom:-180px;left:28%;animation:drift3 38s ease-in-out infinite alternate}
+.blob.b4{width:380px;height:380px;background:radial-gradient(circle,#cdd4ff 0%,transparent 70%);top:48%;left:-100px;animation:drift2 29s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(120px,90px) scale(1.12)}}
+@keyframes drift2{to{transform:translate(-90px,130px) scale(.92)}}
+@keyframes drift3{to{transform:translate(100px,-110px) scale(1.08)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.55 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- Cursor glow & ripple ---------- */
+#cursorGlow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(91,108,255,.10) 0%,rgba(43,179,212,.05) 40%,transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity .4s;opacity:0}
+.ripple{position:fixed;border-radius:50%;pointer-events:none;z-index:60;
+  border:1.5px solid rgba(91,108,255,.45);transform:translate(-50%,-50%);
+  animation:rip .9s cubic-bezier(.2,.6,.2,1) forwards}
+@keyframes rip{from{width:8px;height:8px;opacity:.9}to{width:220px;height:220px;opacity:0}}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:50;
+  display:flex;align-items:center;gap:6px;padding:8px 10px;
+  background:var(--glass-strong);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);
+  border:1px solid var(--glass-border);border-radius:999px;box-shadow:var(--shadow)}
+nav .logo{font-weight:800;font-size:15px;padding:6px 14px;letter-spacing:.04em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a.nl{font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none;
+  padding:7px 13px;border-radius:999px;transition:all .25s}
+nav a.nl:hover{color:var(--ink);background:rgba(255,255,255,.8)}
+#langBtn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 14px;border-radius:999px;border:1px solid rgba(91,108,255,.25);
+  background:rgba(255,255,255,.6);color:var(--accent-1);transition:all .25s}
+#langBtn:hover{background:var(--grad);color:#fff;border-color:transparent}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+section{padding:110px 0 30px;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent-1);
+  padding:6px 16px;border-radius:999px;background:rgba(255,255,255,.55);
+  border:1px solid rgba(91,108,255,.18);backdrop-filter:blur(12px);margin-bottom:22px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--grad);
+  animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+h2.sec{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.sec-sub{color:var(--ink-2);font-size:16px;max-width:640px;margin-bottom:48px}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 60px}
+.hero h1{font-size:clamp(44px,7.5vw,84px);font-weight:900;letter-spacing:-.03em;line-height:1.12;margin-bottom:10px}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(17px,2vw,21px);color:var(--ink-2);max-width:620px;margin:18px 0 38px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;
+  text-decoration:none;padding:13px 28px;border-radius:999px;transition:all .3s cubic-bezier(.2,.6,.2,1);position:relative;overflow:hidden}
+.btn-pri{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(91,108,255,.32)}
+.btn-pri:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(91,108,255,.42)}
+.btn-sec{background:var(--glass-strong);color:var(--ink);border:1px solid var(--glass-border);
+  backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+.btn-sec:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.socials{display:flex;gap:10px;margin-top:42px}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;
+  background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(16px);
+  color:var(--ink-2);transition:all .3s;box-shadow:var(--shadow)}
+.socials a:hover{transform:translateY(-3px);color:var(--accent-1);box-shadow:var(--shadow-hover)}
+.socials svg{width:19px;height:19px}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,var(--ink-3),transparent);
+  animation:fall 1.8s ease-in-out infinite}
+@keyframes fall{from{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}to{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Glass card ---------- */
+.card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);
+  backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+  transition:transform .45s cubic-bezier(.2,.6,.2,1),box-shadow .45s}
+.card::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 48%,transparent 62%);
+  transform:translateX(-120%);transition:transform .9s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.card:hover::before{transform:translateX(120%)}
+
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.stat{padding:30px 24px;text-align:center}
+.stat .num{font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:13px;color:var(--ink-2);margin-top:6px;font-weight:500}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:22px;align-items:stretch}
+.about-main{padding:40px 42px}
+.about-main p{color:var(--ink-2);font-size:15.5px;margin-bottom:16px}
+.about-main p strong{color:var(--ink);font-weight:600}
+.pill-box{padding:34px 32px}
+.pill-box h3{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{font-size:13px;font-weight:500;color:var(--ink-2);padding:7px 15px;border-radius:999px;
+  background:rgba(255,255,255,.65);border:1px solid var(--glass-border);transition:all .25s}
+.pill:hover{color:var(--accent-1);border-color:rgba(91,108,255,.3);transform:translateY(-1px)}
+
+/* ---------- Work ---------- */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.work{padding:36px 34px;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.work .tag{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+.work h3{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.work p{font-size:14.5px;color:var(--ink-2);flex:1}
+.work .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.work .m{font-size:12px;font-weight:600;color:var(--ink-2);padding:5px 12px;border-radius:999px;
+  background:rgba(255,255,255,.65);border:1px solid var(--glass-border)}
+.work .lnk{margin-top:18px;font-size:13.5px;font-weight:600;color:var(--accent-1);display:inline-flex;align-items:center;gap:5px}
+.work .lnk svg{width:14px;height:14px;transition:transform .3s}
+.work:hover .lnk svg{transform:translate(3px,-3px)}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;padding-left:34px;margin-top:46px}
+.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(to bottom,rgba(91,108,255,.45),rgba(43,179,212,.25),transparent)}
+.titem{position:relative;padding:0 0 40px}
+.titem:last-child{padding-bottom:8px}
+.titem::before{content:'';position:absolute;left:-34px;top:7px;width:16px;height:16px;border-radius:50%;
+  background:var(--grad);border:3.5px solid #fff;box-shadow:0 0 0 1px rgba(91,108,255,.25),0 2px 8px rgba(91,108,255,.3)}
+.titem .when{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--accent-1);text-transform:uppercase}
+.titem h3{font-size:19px;font-weight:700;margin:5px 0 4px}
+.titem .org{font-size:14px;color:var(--ink-3);font-weight:500;margin-bottom:8px}
+.titem p{font-size:14.5px;color:var(--ink-2);max-width:640px}
+
+/* ---------- Contact ---------- */
+.contact-card{padding:64px 48px;text-align:center}
+.contact-card h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.contact-card p{color:var(--ink-2);max-width:480px;margin:0 auto 34px}
+footer{padding:46px 0 38px;text-align:center;font-size:13px;color:var(--ink-3)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .about-grid,.work-grid{grid-template-columns:1fr}
+  nav a.nl{display:none}
+  nav .logo{padding:6px 10px}
+  section{padding:80px 0 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora">
+  <div class="blob b1" data-px="30"></div>
+  <div class="blob b2" data-px="-22"></div>
+  <div class="blob b3" data-px="18"></div>
+  <div class="blob b4" data-px="-14"></div>
+</div>
+<div class="grain"></div>
+<div id="cursorGlow"></div>
+
+<nav id="navBar"></nav>
+<main id="app"></main>
+<footer id="siteFooter"></footer>
+
+<script src="content.js"></script>
+<script>
+/* ============================================================
+   渲染引擎 — 內容一律來自 content.js 的 window.SITE_CONTENT
+   ============================================================ */
+const C = window.SITE_CONTENT;
+let lang = localStorage.getItem('ls-lang') || 'zh';
+const t = v => (v && typeof v === 'object') ? (v[lang] ?? v.zh ?? '') : (v ?? '');
+const esc = s => String(s).replace(/"/g,'&quot;');
+
+const ICONS = {
+  x:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.7-9.9L0 1.2h7.7l5.3 7 5.9-7zm-1.3 19.4h2L6.6 3.3H4.4l13.2 17.3z"/></svg>',
+  github:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6.5L21 7"/></svg>',
+  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>'
+};
+
+function renderNav(){
+  document.getElementById('navBar').innerHTML = `
+    <span class="logo">${C.meta.logo}</span>
+    <a class="nl" href="#about">${t(C.nav.about)}</a>
+    <a class="nl" href="#work">${t(C.nav.work)}</a>
+    <a class="nl" href="#journey">${t(C.nav.journey)}</a>
+    <a class="nl" href="#contact">${t(C.nav.contact)}</a>
+    <button id="langBtn" aria-label="Switch language">${lang==='zh'?'EN':'中'}</button>`;
+  document.getElementById('langBtn').onclick = ()=>{
+    lang = lang==='zh' ? 'en' : 'zh';
+    localStorage.setItem('ls-lang', lang);
+    renderAll();
+  };
+}
+
+function renderMain(){
+  const H = C.hero, L = C.links;
+  const stats = C.stats.map((s,i)=>`
+    <div class="card stat reveal" style="transition-delay:${i*.06}s">
+      <div class="num">${s.num}</div><div class="lbl">${t(s.lbl)}</div>
+    </div>`).join('');
+
+  const aboutParas = C.about.paragraphs.map(p=>`<p>${t(p)}</p>`).join('');
+  const skills = C.about.skills.map(s=>`<span class="pill">${t(s)}</span>`).join('');
+  const langs = C.about.langs.map(s=>`<span class="pill">${t(s)}</span>`).join('');
+
+  const works = C.work.items.map((w,i)=>{
+    const metas = (w.metas||[]).map(m=>`<span class="m">${t(m)}</span>`).join('');
+    const inner = `
+      <span class="tag">${t(w.tag)}</span>
+      <h3>${t(w.title)}</h3>
+      <p>${t(w.desc)}</p>
+      <div class="meta">${metas}</div>
+      ${w.link ? `<span class="lnk">${t(w.linkLabel)||'Link'} ${ICONS.arrow}</span>` : ''}`;
+    const delay = i%2 ? ' style="transition-delay:.08s"' : '';
+    return w.link
+      ? `<a class="card work reveal"${delay} href="${esc(w.link)}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="card work reveal"${delay}>${inner}</div>`;
+  }).join('');
+
+  const journey = C.journey.items.map(j=>`
+    <div class="titem reveal">
+      <span class="when">${j.when}</span>
+      <h3>${t(j.title)}</h3>
+      <div class="org">${t(j.org)}</div>
+      <p>${t(j.desc)}</p>
+    </div>`).join('');
+
+  document.getElementById('app').innerHTML = `
+  <header class="hero wrap" id="top">
+    <span class="eyebrow"><span class="dot"></span>${H.eyebrow}</span>
+    <h1>${t(H.name)}<br><span class="grad">${t(H.tagline)}</span></h1>
+    <p class="sub">${t(H.sub)}</p>
+    <div class="cta-row">
+      <a class="btn btn-pri" href="#work">${t(H.cta1)}</a>
+      <a class="btn btn-sec" href="#contact">${t(H.cta2)}</a>
+    </div>
+    <div class="socials">
+      <a href="${esc(L.x)}" target="_blank" rel="noopener" aria-label="X">${ICONS.x}</a>
+      <a href="${esc(L.github)}" target="_blank" rel="noopener" aria-label="GitHub">${ICONS.github}</a>
+      <a href="mailto:${esc(L.email)}" aria-label="Email">${ICONS.mail}</a>
+    </div>
+    <div class="scroll-hint">${t(H.scrollHint)}</div>
+  </header>
+
+  <section class="wrap" style="padding-top:0"><div class="stats">${stats}</div></section>
+
+  <section class="wrap" id="about">
+    <span class="eyebrow reveal"><span class="dot"></span>${t(C.about.eyebrow)}</span>
+    <h2 class="sec reveal">${t(C.about.heading)}</h2>
+    <div class="about-grid">
+      <div class="card about-main reveal">${aboutParas}</div>
+      <div class="card pill-box reveal" style="transition-delay:.1s">
+        <h3>${t(C.about.skillsTitle)}</h3>
+        <div class="pills">${skills}</div>
+        <h3 style="margin-top:26px">${t(C.about.langsTitle)}</h3>
+        <div class="pills">${langs}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="work">
+    <span class="eyebrow reveal"><span class="dot"></span>${t(C.work.eyebrow)}</span>
+    <h2 class="sec reveal">${t(C.work.heading)}</h2>
+    <p class="sec-sub reveal">${t(C.work.sub)}</p>
+    <div class="work-grid">${works}</div>
+  </section>
+
+  <section class="wrap" id="journey">
+    <span class="eyebrow reveal"><span class="dot"></span>${t(C.journey.eyebrow)}</span>
+    <h2 class="sec reveal">${t(C.journey.heading)}</h2>
+    <div class="timeline">${journey}</div>
+  </section>
+
+  <section class="wrap" id="contact" style="padding-bottom:40px">
+    <div class="card contact-card reveal">
+      <span class="eyebrow"><span class="dot"></span>${t(C.contact.eyebrow)}</span>
+      <h2>${t(C.contact.heading)}</h2>
+      <p>${t(C.contact.desc)}</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-pri" href="mailto:${esc(L.email)}">${L.email}</a>
+        <a class="btn btn-sec" href="${esc(L.x)}" target="_blank" rel="noopener">X</a>
+        <a class="btn btn-sec" href="${esc(L.github)}" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>`;
+
+  document.getElementById('siteFooter').innerHTML = `<span>${t(C.footer)}</span>`;
+  document.title = t(C.meta.title);
+  document.documentElement.lang = lang==='zh' ? 'zh-Hant' : 'en';
+}
+
+/* ---------- 互動效果(每次渲染後重新綁定) ---------- */
+const fine = window.matchMedia('(pointer:fine)').matches;
+
+function bindInteractions(){
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  if (fine){
+    document.querySelectorAll('.card').forEach(card=>{
+      card.addEventListener('mousemove', e=>{
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX-r.left)/r.width, py = (e.clientY-r.top)/r.height;
+        card.style.background = `radial-gradient(circle at ${px*100}% ${py*100}%, rgba(255,255,255,.78), rgba(255,255,255,.48) 60%)`;
+      });
+      card.addEventListener('mouseleave', ()=>{ card.style.background=''; });
+    });
+  }
+}
+
+function renderAll(){
+  renderNav();
+  renderMain();
+  bindInteractions();
+}
+renderAll();
+
+/* ---------- 全域效果(只綁一次) ---------- */
+if (fine){
+  const glow = document.getElementById('cursorGlow');
+  let gx=0, gy=0, cx=innerWidth/2, cy=innerHeight/2;
+  addEventListener('mousemove', e=>{ gx=e.clientX; gy=e.clientY; glow.style.opacity=1; });
+  (function loop(){
+    cx += (gx-cx)*.08; cy += (gy-cy)*.08;
+    glow.style.left = cx+'px'; glow.style.top = cy+'px';
+    requestAnimationFrame(loop);
+  })();
+
+  addEventListener('click', e=>{
+    const r = document.createElement('span');
+    r.className = 'ripple';
+    r.style.left = e.clientX+'px'; r.style.top = e.clientY+'px';
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(), 950);
+  });
+
+  const blobs = document.querySelectorAll('.blob');
+  addEventListener('mousemove', e=>{
+    const nx = e.clientX/innerWidth - .5, ny = e.clientY/innerHeight - .5;
+    blobs.forEach(b=>{
+      const f = parseFloat(b.dataset.px||0);
+      b.style.translate = `${nx*f}px ${ny*f}px`;
+    });
+  });
+}
+
+addEventListener('scroll', ()=>{
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  const y = scrollY;
+  if (y < innerHeight) hero.style.transform = `translateY(${y*.12}px)`;
+  hero.style.opacity = Math.max(0, 1 - y/(innerHeight*.9));
+},{passive:true});
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
