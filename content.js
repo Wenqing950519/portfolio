@@ -381,4 +381,4 @@ window.SITE_CONTENT = {
         },
         "desc": {
           "zh": "開始在 X 上發表新興金融與 AI 領域的市場分析,半年累積 81 萬曝光。",
-          "en": "Began publishing market analysis on emerging finance and AI, reaching 81
+          "en": "Began publishing market analysis on emerging finance and AI, reaching 810K impressions in six months."
