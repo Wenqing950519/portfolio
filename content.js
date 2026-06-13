@@ -257,30 +257,10 @@ window.SITE_CONTENT = {
             "en": "Club teaching"
           }
         ],
-        "link": "https://www.instagram.com/fjcu_finlab",
+        "link": "finance-lab.html",
         "linkLabel": {
-          "zh": "Instagram",
-          "en": "Instagram"
-        }
-      },
-      {
-        "tag": {
-          "zh": "",
-          "en": ""
-        },
-        "title": {
-          "zh": "",
-          "en": ""
-        },
-        "desc": {
-          "zh": "",
-          "en": ""
-        },
-        "metas": [],
-        "link": "",
-        "linkLabel": {
-          "zh": "",
-          "en": ""
+          "zh": "查看經歷",
+          "en": "View Detail"
         }
       },
       {
@@ -379,7 +359,7 @@ window.SITE_CONTENT = {
           "en": "@Tungowo1413"
         },
         "desc": {
-          "zh": "開始在 X 上發表新興金融與 AI 領域的市場分析,半年累積 81 萬曝光。",
+          "zh": "開始在 X 上發表新興金融與 AI 領域的市場分析，半年累積 81 萬曝光。",
           "en": "Began publishing market analysis on emerging finance and AI, reaching 810K impressions in six months."
         }
       },

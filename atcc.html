@@ -371,6 +371,65 @@ footer{
   transition:opacity .7s ease,transform .7s ease;
 }
 .reveal.in{opacity:1;transform:none}
+/* ---------- CONTRIBUTION bounce cards ---------- */
+.service-art.bounce{
+  background:none;
+  box-shadow:none;
+  overflow:visible;
+  height:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.service-art.bounce::before,
+.service-art.bounce::after{display:none}
+.bounce-cards{
+  position:relative;
+  width:100%;
+  max-width:330px;
+  height:200px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.bc-card{
+  position:absolute;
+  width:142px;
+  aspect-ratio:1;
+  border:5px solid var(--paper-2);
+  border-radius:18px;
+  overflow:hidden;
+  background:var(--paper-2);
+  box-shadow:0 8px 22px rgba(21,36,31,.24);
+  cursor:pointer;
+  will-change:transform;
+}
+.bc-card img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:620px){
+  .bounce-cards{height:172px;max-width:300px}
+  .bc-card{width:120px}
+}
+/* ---------- PROCESS photo frames ---------- */
+.service-art.photo{
+  background:none;
+  box-shadow:none;
+  overflow:visible;
+  height:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.service-art.photo::before,
+.service-art.photo::after{display:none}
+.proc-frame{
+  background:var(--paper-2);
+  border:6px solid var(--paper-2);
+  box-shadow:16px 16px 0 rgba(21,36,31,.10),var(--shadow);
+  overflow:hidden;
+}
+.proc-frame img{width:100%;height:100%;object-fit:contain;display:block;background:var(--paper-2)}
+.proc-frame.tall{aspect-ratio:1414/2000;width:100%;max-width:300px;margin:0 auto}
+.proc-frame.wide{aspect-ratio:866/475;width:100%}
 @media(max-width:900px){
   .top-nav{width:calc(100vw - 32px)}
   .nav-links{gap:14px}
@@ -415,27 +474,27 @@ footer{
 <nav class="top-nav">
   <a class="brand" href="index.html?skipIntro=1#work">林立勝 <em>Li-Sheng Lin</em></a>
   <div class="nav-links">
-    <a href="index.html?skipIntro=1#work">Works</a>
-    <a href="#role">Role</a>
-    <a href="#process">Process</a>
-    <a href="#impact">Impact</a>
-    <a href="index.html?skipIntro=1#contact">Contact</a>
+    <a href="index.html?skipIntro=1#work">作品</a>
+    <a href="#role">貢獻</a>
+    <a href="#process">流程</a>
+    <a href="#impact">成果</a>
+    <a href="index.html?skipIntro=1#contact">聯絡</a>
   </div>
 </nav>
 
-<span class="side-label left">SCROLL</span>
-<span class="side-label right">BACK TO TOP</span>
+<span class="side-label left">向下捲動</span>
+<span class="side-label right">回到頂部</span>
 
 <main>
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1 class="reveal">ATCC <em>Case.</em></h1>
+        <h1 class="reveal"><em>ATCC Competition.</em></h1>
         <div class="hero-copy reveal">
-          <strong>以 HP 為題，從市場分析、策略規劃到 MVP 概念建構，完成一份可以被企業端理解的提案。</strong>
-          <p>Business case project / strategy proposal / MVP concept / live pitch</p>
+          <strong>以 HP 為題，從 20% 極端用戶的角度出發，探索能輻射至 100% 使用者的產品設計，產出完整的企劃提案。</strong>
+          <p>全國大學生商業競賽 ｜ 千人 Camp ｜ 企劃與現場提案</p>
         </div>
-        <a class="button reveal" href="#role">View Details</a>
+        <a class="button reveal" href="#role">查看細節</a>
       </div>
       <div class="visual-stage reveal" aria-hidden="true">
         <div class="visual-card"></div>
@@ -457,50 +516,52 @@ footer{
 
   <section class="section" id="role">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="section-kicker">ROLE</div>
-        <h2>CONTRIBUTION</h2>
-        <p>這頁用更像作品集詳情頁的方式，拆開說明我在 ATCC 卡片背後實際做了哪些工作。</p>
+      <div class="section-head reveal" style="margin-bottom:28px">
+        <div class="section-kicker">我的歷程</div>
+        <h2>競賽歷程</h2>
       </div>
 
       <div class="service-list">
         <article class="service-row reveal">
-          <div class="service-art"></div>
+          <div class="service-art bounce">
+            <div class="bounce-cards" data-bc>
+              <div class="bc-card" style="transform:rotate(-6deg) translate(-48px)"><img src="images/400081_0.jpg" alt="ATCC 實戰工作坊" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(6deg) translate(48px)"><img src="images/400082_0.jpg" alt="ATCC 實戰工作坊" loading="lazy"></div>
+            </div>
+          </div>
           <div class="service-copy">
             <span class="num">01</span>
-            <h3>市場分析與問題定義</h3>
-            <p>整理 HP 題目背景、品牌脈絡、使用者情境與市場缺口，將開放式命題收斂成可以被討論和提案的策略問題。</p>
-            <a class="view-line" href="#process">View Detail</a>
+            <h3>ATCC 實戰工作坊</h3>
+            <p>在 HP 業師帶領的實戰工作坊中，學習以 Design Thinking 為框架，從使用者情境切入，發想並收斂 HP AI PC 在消費端的真實痛點。</p>
           </div>
         </article>
 
         <article class="service-row flip reveal">
-          <div class="service-art blue"></div>
+          <div class="service-art bounce">
+            <div class="bounce-cards" data-bc>
+              <div class="bc-card" style="transform:rotate(-6deg) translate(-48px)"><img src="images/SnapInsta.to_682083160_18204684439339008_7927239956634389682_n.jpg" alt="ATCC 千人Camp" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(6deg) translate(48px)"><img src="images/400080_0.jpg" alt="ATCC 千人Camp" loading="lazy"></div>
+            </div>
+          </div>
           <div class="service-copy">
             <span class="num">02</span>
-            <h3>策略規劃與方案架構</h3>
-            <p>把研究洞察轉成提案主軸，包含目標受眾、價值主張、推廣路徑與可被企業端理解的執行方式。</p>
-            <a class="view-line" href="#process">View Detail</a>
+            <h3>ATCC 千人Camp</h3>
+            <p>歷經連續十小時的高強度腦力激盪，主導企劃撰寫與產品規劃，在短時間內明確定義痛點，產出一頁式摘要，並與業師近距離探討可行性。</p>
           </div>
         </article>
 
         <article class="service-row reveal">
-          <div class="service-art coral"></div>
+          <div class="service-art bounce">
+            <div class="bounce-cards" data-bc>
+              <div class="bc-card" style="transform:rotate(-8deg) translate(-86px)"><img src="images/400079_0.jpg" alt="HP 總部參訪" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(2deg) translate(0px)"><img src="images/SnapInsta.to_689179569_18205514857339008_552526729059078982_n.jpg" alt="HP 總部參訪" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(8deg) translate(86px)"><img src="images/SnapInsta.to_686947833_18205514884339008_2263777441063631_n.jpg" alt="HP 總部參訪" loading="lazy"></div>
+            </div>
+          </div>
           <div class="service-copy">
             <span class="num">03</span>
-            <h3>MVP 概念與驗證路徑</h3>
-            <p>將策略具體化成 MVP 方向，讓提案不只停留在想法，而能呈現如何落地、測試、迭代與衡量成效。</p>
-            <a class="view-line" href="#process">View Detail</a>
-          </div>
-        </article>
-
-        <article class="service-row flip reveal">
-          <div class="service-art mint"></div>
-          <div class="service-copy">
-            <span class="num">04</span>
-            <h3>簡報敘事與現場提案</h3>
-            <p>將資料、策略、MVP 與預期效果整理成 pitch flow，並參與至 HP 台北總部的提案發表與企業參訪。</p>
-            <a class="view-line" href="#impact">View Detail</a>
+            <h3>HP 總部參訪與企劃指導</h3>
+            <p>歷經多輪評審篩選後晉級全國六十六強，並受邀前往 HP 台北總部進行現場報告與企業參訪。</p>
           </div>
         </article>
       </div>
@@ -509,26 +570,29 @@ footer{
 
   <section class="section" id="process">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="section-kicker">PROCESS</div>
-        <h2>WORK FLOW</h2>
-        <p>我把整個競賽工作拆成四段：Research、Strategy、Prototype、Pitch。每一段都對應到最後提案能否被理解與採納。</p>
+      <div class="section-head reveal" style="margin-bottom:28px">
+        <div class="section-kicker">競賽產出</div>
+        <h2>成果演示</h2>
       </div>
       <div class="service-list">
         <article class="service-row reveal">
-          <div class="service-art blue"></div>
+          <div class="service-art photo">
+            <div class="proc-frame tall"><img src="images/atcc-plan.png" alt="企劃書兩頁" loading="lazy"></div>
+          </div>
           <div class="service-copy">
             <span class="num">A</span>
-            <h3>Research to Signal</h3>
-            <p>先收斂題目與資料，避免一開始就進入漂亮但不對題的創意；將資料轉成能支撐策略的訊號。</p>
+            <h3>從 Design Thinking 到企劃書</h3>
+            <p>以 ADHD 使用者的容易中斷手中任務為題，定義出「任務延續能力」作為核心痛點，完成多頁 A4 企劃書，涵蓋核心洞察、市場邏輯、顧客旅程與 HP 價值定位。</p>
           </div>
         </article>
         <article class="service-row flip reveal">
-          <div class="service-art coral"></div>
+          <div class="service-art photo">
+            <div class="proc-frame wide"><img src="images/atcc-mvp.png" alt="MVP 雛型" loading="lazy"></div>
+          </div>
           <div class="service-copy">
             <span class="num">B</span>
-            <h3>Signal to Story</h3>
-            <p>將策略轉為簡報敘事，安排痛點、洞察、方案、原型與預期效果的順序，讓評審能快速進入情境。</p>
+            <h3>MVP 的雛型建構</h3>
+            <p>將企劃內容轉化為具體可操作的 MVP 原型，呈現「任務接續系統」在 HP AI PC 下的運作形式。</p>
           </div>
         </article>
       </div>
@@ -538,27 +602,25 @@ footer{
   <section class="section" id="impact">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="section-kicker">IMPACT</div>
-        <h2>RESULT</h2>
+        <div class="section-kicker">競賽成效</div>
+        <h2>最終成果</h2>
       </div>
       <div class="impact">
         <div class="metric reveal"><strong>Top 66</strong><span>晉級全國六十六強</span></div>
         <div class="metric reveal"><strong>100+</strong><span>參賽隊伍競爭</span></div>
-        <div class="metric reveal"><strong>HP HQ</strong><span>台北總部提案與參訪</span></div>
-      </div>
-      <div class="closing reveal">
-        <p>這個專案訓練我在有限時間裡，把複雜商業命題整理成有邏輯、有策略、也能被現場說服的提案。</p>
+        <div class="metric reveal"><strong>HP 台北總部</strong><span>提案發表與企業參訪</span></div>
       </div>
     </div>
   </section>
 
   <div class="footer-nav">
-    <a class="button" href="index.html?skipIntro=1#work">Back to Works</a>
+    <a class="button" href="index.html?skipIntro=1#work">返回 Portfolio</a>
   </div>
 </main>
 
 <footer>© 2026 林立勝 Li-Sheng Lin</footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 const io = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -569,6 +631,68 @@ const io = new IntersectionObserver(entries=>{
   });
 },{threshold:.14,rootMargin:'0px 0px -42px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- BounceCards (vanilla port of React Bits + GSAP) ---------- */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const noRot = t => /rotate\([\s\S]*?\)/.test(t)
+    ? t.replace(/rotate\([\s\S]*?\)/,'rotate(0deg)')
+    : (t === 'none' ? 'rotate(0deg)' : t + ' rotate(0deg)');
+  const pushed = (t,dx) => {
+    const r = /translate\(([-0-9.]+)px\)/;
+    const m = t.match(r);
+    if (m) return t.replace(r,`translate(${parseFloat(m[1])+dx}px)`);
+    return t === 'none' ? `translate(${dx}px)` : `${t} translate(${dx}px)`;
+  };
+
+  function setup(container){
+    const cards = Array.from(container.querySelectorAll('.bc-card'));
+    const bases = cards.map(c => c.style.transform || 'none');
+    let played = false;
+
+    const play = () => {
+      if (played) return; played = true;
+      if (reduce || typeof gsap === 'undefined') return;
+      gsap.fromTo(cards, { scale:0 },
+        { scale:1, stagger:0.08, ease:'elastic.out(1, 0.5)', delay:0.1 });
+    };
+
+    if (typeof gsap !== 'undefined' && !reduce){
+      cards.forEach((card,idx)=>{
+        card.addEventListener('mouseenter',()=>{
+          cards.forEach((c,i)=>{
+            gsap.killTweensOf(c);
+            c.style.zIndex = (i === idx) ? '10' : '1';   // 把滑到的那張提到最前
+            if (i === idx){
+              gsap.to(c,{ transform:noRot(bases[i]), duration:0.4, ease:'back.out(1.4)', overwrite:'auto' });
+            } else {
+              const dx = i < idx ? -70 : 70;
+              gsap.to(c,{ transform:pushed(bases[i],dx), duration:0.4, ease:'back.out(1.4)',
+                delay:Math.abs(idx-i)*0.05, overwrite:'auto' });
+            }
+          });
+        });
+        card.addEventListener('mouseleave',()=>{
+          cards.forEach((c,i)=>{
+            gsap.killTweensOf(c);
+            c.style.zIndex = '';                          // 還原原本堆疊順序
+            gsap.to(c,{ transform:bases[i], duration:0.4, ease:'back.out(1.4)', overwrite:'auto' });
+          });
+        });
+      });
+    }
+    return play;
+  }
+
+  const players = new Map();
+  document.querySelectorAll('[data-bc]').forEach(c => players.set(c, setup(c)));
+  const bcIO = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){ (players.get(e.target) || (()=>{}))(); bcIO.unobserve(e.target); }
+    });
+  },{ threshold:.3 });
+  players.forEach((_,c)=>bcIO.observe(c));
+})();
 </script>
 </body>
 </html>

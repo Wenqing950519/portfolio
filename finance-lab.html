@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融研究社 — 加密貨幣組組長 / 區塊鏈部門顧問 | 林立勝</title>
+<meta name="description" content="輔大金融研究社經歷：加密貨幣組組長、區塊鏈部門顧問。週報主編、社課講授與社群運營的全流程把關。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6efe4;
+  --paper-2:#fffaf0;
+  --ink:#15241f;
+  --muted:#607067;
+  --forest:#20493b;
+  --forest-2:#163227;
+  --coral:#e87b5f;
+  --ochre:#d8a54a;
+  --blue:#345edb;
+  --mint:#9bc8bd;
+  --line:rgba(21,36,31,.16);
+  --shadow:0 22px 48px rgba(30,42,36,.12);
+  --clip:rgba(21,36,31,.5);
+  --font:'Inter','Noto Sans TC',-apple-system,'PingFang TC','Microsoft JhengHei',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{
+  min-height:100vh;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.72;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* crumpled-paper feel: cream base + faint creases + grain */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(125deg,rgba(255,255,255,.5) 0 12%,transparent 12.4% 30%,rgba(21,36,31,.03) 30.4% 31%,transparent 31.4% 64%,rgba(255,255,255,.4) 64.4% 76%,transparent 76.4%),
+    linear-gradient(58deg,transparent 0 40%,rgba(21,36,31,.025) 40.3% 41%,transparent 41.3% 70%,rgba(255,255,255,.38) 70.4% 82%,transparent 82.4%),
+    var(--paper);
+}
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+::selection{background:rgba(232,123,95,.28)}
+.wrap{width:min(1120px,calc(100vw - 56px));margin:0 auto}
+
+/* ---------- top nav ---------- */
+.top-nav{
+  width:min(1120px,calc(100vw - 56px));
+  margin:24px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  font-size:12px;
+}
+.brand{text-decoration:none;font-size:18px;font-weight:900}
+.brand em{font-style:normal;color:var(--muted);font-size:12px;margin-left:8px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:800}
+.nav-links a:hover{color:var(--coral)}
+
+/* ---------- scrapbook primitives ---------- */
+/* polaroid-style snapshot: white frame, color block inside, tilted, clipped */
+.snap{
+  position:relative;
+  background:var(--paper-2);
+  padding:14px 14px 30px;
+  box-shadow:14px 16px 0 rgba(21,36,31,.10),var(--shadow);
+  border:1px solid rgba(21,36,31,.06);
+}
+.snap .fill{
+  width:100%;
+  height:100%;
+  min-height:150px;
+  background:linear-gradient(135deg,var(--forest) 0 46%,var(--mint) 46.4%);
+}
+.snap .fill.blue{background:linear-gradient(135deg,var(--blue) 0 58%,#8a5cff 58.4%)}
+.snap .fill.coral{background:linear-gradient(140deg,var(--coral) 0 44%,var(--blue) 44.4%)}
+.snap .fill.ochre{background:linear-gradient(135deg,var(--ochre) 0 50%,var(--forest) 50.4%)}
+.snap .fill.mint{background:linear-gradient(135deg,#e8f0d6 0 54%,var(--forest) 54.4%)}
+.snap .photo{width:100%;aspect-ratio:1477/1108;object-fit:cover;display:block;background:var(--paper)}
+.snap .cap{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+/* paperclip */
+.clip{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  width:24px;
+  height:54px;
+  transform:translateX(-50%) rotate(8deg);
+  z-index:3;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='54' viewBox='0 0 24 54' fill='none' stroke='%2335433d' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 17 V40 a5.5 5.5 0 0 0 11 0 V12 a8.5 8.5 0 0 0 -17 0 V42'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+.clip.r{left:auto;right:24px;transform:rotate(-12deg)}
+/* sticky-tape */
+.tape{
+  position:absolute;
+  width:78px;
+  height:26px;
+  background:rgba(155,200,189,.42);
+  border-left:1px dashed rgba(255,255,255,.5);
+  border-right:1px dashed rgba(255,255,255,.5);
+  box-shadow:0 2px 6px rgba(21,36,31,.08);
+  z-index:3;
+}
+/* sticky note */
+.sticky{
+  position:absolute;
+  display:grid;
+  align-content:center;
+  gap:6px;
+  padding:18px 20px;
+  background:var(--ochre);
+  color:var(--forest-2);
+  box-shadow:0 16px 30px rgba(21,36,31,.2);
+  z-index:4;
+}
+.sticky b{font-size:13px;font-weight:900;letter-spacing:.04em}
+.sticky span{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+
+/* ---------- hero ---------- */
+.hero{padding:70px 0 86px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  align-items:center;
+  gap:64px;
+}
+.kicker{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:22px;
+  color:var(--forest);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.kicker::before{content:'';width:32px;height:2px;background:var(--coral)}
+.hero h1{
+  font-size:clamp(52px,8.5vw,108px);
+  line-height:.92;
+  font-weight:900;
+  letter-spacing:.01em;
+}
+.hero h1 em{display:block;font-style:normal;font-weight:900;color:var(--coral)}
+.hero-zh{
+  margin-top:18px;
+  font-size:clamp(22px,3vw,30px);
+  font-weight:900;
+}
+.hero-copy{max-width:520px;margin-top:26px}
+.hero-copy strong{display:block;font-size:17px;line-height:1.85;font-weight:900}
+.hero-copy p{margin-top:14px;color:var(--muted);font-size:13px;font-weight:700}
+.button{
+  width:max-content;
+  min-width:180px;
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-top:36px;
+  padding:12px 24px;
+  background:var(--ink);
+  color:var(--paper-2);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  box-shadow:0 18px 34px rgba(21,36,31,.16);
+  transition:transform .2s,box-shadow .2s;
+}
+.button:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(21,36,31,.22)}
+.button.alt{background:var(--coral);color:var(--forest-2)}
+
+/* hero collage */
+.collage{position:relative;height:440px}
+.collage .snap{position:absolute}
+.collage .c-back{top:6px;right:0;width:300px;transform:rotate(5deg)}
+.collage .c-back .fill{height:210px}
+.collage .c-front{bottom:0;left:0;width:236px;transform:rotate(-6deg)}
+.collage .c-front .fill{height:158px}
+.collage .sticky{top:-10px;left:36px;transform:rotate(-7deg);width:172px}
+
+/* ---------- sections ---------- */
+.section{padding:84px 0}
+.section-head{margin-left:64px;margin-bottom:56px}
+.section-kicker{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+  color:var(--forest);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.section-kicker::before{content:'';width:32px;height:2px;background:var(--coral)}
+.section h2{
+  font-size:clamp(40px,6vw,76px);
+  line-height:.98;
+  font-weight:900;
+  letter-spacing:.02em;
+  color:var(--coral);
+}
+.section-head p{max-width:600px;margin-top:24px;color:var(--muted);font-size:14px;font-weight:700}
+
+.role-list{display:grid;gap:84px}
+.role-row{
+  width:min(940px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:320px minmax(0,1fr);
+  align-items:center;
+  gap:64px;
+}
+.role-row.flip{grid-template-columns:minmax(0,1fr) 320px}
+.role-row.flip .role-art{order:2}
+.role-row.flip .role-copy{order:1}
+.role-art{position:relative;padding:0 8px}
+.role-art.t1 .snap{transform:rotate(-4deg)}
+.role-art.t2 .snap{transform:rotate(3.5deg)}
+.role-art.t3 .snap{transform:rotate(-3deg)}
+.role-art .snap .fill{height:190px}
+/* ---------- BounceCards 照片堆疊 ---------- */
+.bounce-cards{position:relative;width:100%;max-width:330px;height:210px;display:flex;justify-content:center;align-items:center;margin:0 auto}
+.bc-card{position:absolute;width:140px;aspect-ratio:4/3;border:5px solid var(--paper-2);border-radius:16px;overflow:hidden;background:var(--paper-2);box-shadow:0 8px 22px rgba(21,36,31,.24);cursor:pointer;will-change:transform}
+.bc-card img{width:100%;height:100%;object-fit:cover;display:block}
+.bounce-cards.r02 .bc-card{width:120px}
+.bounce-cards.r03 .bc-card{width:140px}
+.bounce-cards.solo .bc-card{position:relative}
+.bounce-cards.solo.r01 .bc-card{width:250px;aspect-ratio:7/5}
+.bounce-cards.solo.r04 .bc-card{width:220px;aspect-ratio:4/3}
+@media(max-width:620px){
+  .bounce-cards{height:180px}
+  .bc-card,.bounce-cards.r03 .bc-card{width:118px}
+  .bounce-cards.r02 .bc-card{width:104px}
+  .bounce-cards.solo.r01 .bc-card{width:210px}
+  .bounce-cards.solo.r04 .bc-card{width:188px}
+}
+.role-copy .num{
+  display:inline-block;
+  margin-right:14px;
+  color:var(--ochre);
+  font-size:30px;
+  font-weight:900;
+  vertical-align:-2px;
+}
+.role-copy h3{display:inline;font-size:27px;line-height:1.3;font-weight:900}
+.role-copy p{max-width:520px;margin-top:20px;color:var(--muted);font-size:14px;font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{
+  border:1px solid var(--line);
+  padding:5px 11px;
+  font-size:11px;
+  font-weight:900;
+  color:var(--forest);
+}
+
+/* impact */
+.impact{
+  width:min(940px,100%);
+  margin:36px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.metric{padding:26px 0;border-top:2px solid var(--ink)}
+.metric strong{display:block;color:var(--forest);font-size:34px;line-height:1;font-weight:900}
+.metric span{display:block;margin-top:12px;color:var(--muted);font-size:13px;font-weight:900}
+
+.closing{
+  width:min(760px,calc(100vw - 56px));
+  margin:84px auto 0;
+  padding:46px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.closing p{font-size:23px;line-height:1.7;font-weight:900}
+
+.footer-nav{padding:70px 0 46px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:0 0 34px;color:var(--muted);font-size:12px;text-align:center}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .top-nav{width:calc(100vw - 32px)}
+  .nav-links{gap:14px}
+  .nav-links a:nth-child(n+3){display:none}
+  .hero{padding:60px 0}
+  .hero-grid{grid-template-columns:1fr;gap:54px}
+  .collage{height:380px;max-width:420px;margin:0 auto}
+  .section-head{margin-left:0}
+  .role-row,.role-row.flip{grid-template-columns:1fr;gap:30px}
+  .role-row.flip .role-art,.role-row.flip .role-copy{order:initial}
+  .role-art{max-width:340px}
+  .impact{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .wrap{width:min(100% - 28px,1120px)}
+  .top-nav{width:calc(100vw - 28px)}
+  .brand em{display:none}
+  .nav-links a:nth-child(n+2){display:none}
+  .hero h1{font-size:50px}
+  .collage{height:340px}
+  .collage .c-back{width:240px}
+  .collage .c-front{width:188px}
+  .section{padding:60px 0}
+  .section h2{font-size:42px}
+  .role-copy h3{font-size:21px}
+  .closing{width:calc(100vw - 28px)}
+  .closing p{font-size:18px}
+  .footer-nav{flex-direction:column;align-items:center}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+  <a class="brand" href="index.html?skipIntro=1#work">林立勝 <em>Li-Sheng Lin</em></a>
+  <div class="nav-links">
+    <a href="index.html?skipIntro=1#work">作品</a>
+    <a href="#role">歷程</a>
+    <a href="index.html?skipIntro=1#contact">聯絡</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker reveal">輔大金融研究社</div>
+        <h1 class="reveal">FINANCE<em>LAB.</em></h1>
+        <div class="hero-zh reveal">加密貨幣組組長 ／ 區塊鏈部門顧問</div>
+        <div class="hero-copy reveal">
+          <strong>大二擔任本校金融投資研究社的幹部，參與第一線社團運營，以及實際規劃社團課程、對外產出等內容。</strong>
+        </div>
+        <a class="button reveal" href="#role" style="margin-top:24px">查看細節</a>
+      </div>
+      <div class="collage reveal" aria-hidden="true">
+        <div class="snap c-back">
+          <span class="clip r"></span>
+          <img class="photo" src="images/400112.jpg" alt="期末社大" loading="lazy">
+          <div class="cap">期末社大</div>
+        </div>
+        <div class="snap c-front">
+          <span class="clip"></span>
+          <img class="photo" src="images/400102.jpg" alt="迎新" loading="lazy">
+          <div class="cap">迎新</div>
+        </div>
+        <div class="sticky">
+          <span>加密貨幣組</span>
+          <b>組長</b>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="role">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-kicker">我的歷程</div>
+        <h2>社團歷程</h2>
+        <p>在金融研究社服務的這一年多來，認識到許多的菁英，也培養了幾個後輩。</p>
+      </div>
+
+      <div class="role-list">
+        <article class="role-row reveal">
+          <div class="role-art">
+            <div class="bounce-cards solo r01" data-bc>
+              <div class="bc-card" style="transform:rotate(-3deg)"><img src="images/finlab-01.png" alt="內容統籌" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="role-copy">
+            <span class="num">01</span>
+            <h3>內容統籌</h3>
+            <p>擔任組長期間，帶領組員每週產出加密市場週報，並確保每一期都維持穩定的品質與觀點。</p>
+            <div class="tags"><span>週報主編</span><span>文案撰寫</span><span>市場分析</span></div>
+          </div>
+        </article>
+
+        <article class="role-row flip reveal">
+          <div class="role-art">
+            <div class="bounce-cards r02" data-bc>
+              <div class="bc-card" style="transform:rotate(-12deg) translate(-92px)"><img src="images/400104.jpg" alt="公開社課" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(-6deg) translate(-46px)"><img src="images/400105.jpg" alt="公開社課" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(0deg) translate(0px)"><img src="images/400106.jpg" alt="公開社課" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(6deg) translate(46px)"><img src="images/400110_0.jpg" alt="公開社課" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(12deg) translate(92px)"><img src="images/400109_0.jpg" alt="公開社課" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="role-copy">
+            <span class="num">02</span>
+            <h3>公開社課</h3>
+            <p>獨立規劃並主講多場公開社課，主題涵蓋區塊鏈基礎、RWA、穩定幣等內容，單場最高出席逾 50 人，並受頒講師感謝狀。</p>
+            <div class="tags"><span>實體講課</span><span>課程規劃</span><span>簡報製作</span></div>
+          </div>
+        </article>
+
+        <article class="role-row reveal">
+          <div class="role-art">
+            <div class="bounce-cards r03" data-bc>
+              <div class="bc-card" style="transform:rotate(-8deg) translate(-78px)"><img src="images/400108.jpg" alt="社團運營" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(1deg) translate(0px)"><img src="images/A6703562.JPG" alt="社團運營" loading="lazy"></div>
+              <div class="bc-card" style="transform:rotate(8deg) translate(78px)"><img src="images/A6703706.JPG" alt="社團運營" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="role-copy">
+            <span class="num">03</span>
+            <h3>社團運營</h3>
+            <p>參與社團招募、迎新與期末成果展等大小活動，培養跨組協作、橫向溝通等軟實力。</p>
+            <div class="tags"><span>跨組協作</span><span>部門統籌</span><span>活動參與</span><span>對外溝通</span></div>
+          </div>
+        </article>
+
+        <article class="role-row flip reveal">
+          <div class="role-art">
+            <div class="bounce-cards solo r04" data-bc>
+              <div class="bc-card" style="transform:rotate(3deg)"><img src="images/400111.jpg" alt="退居幕後" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="role-copy">
+            <span class="num">04</span>
+            <h3>退居幕後</h3>
+            <p>卸任組長後轉任區塊鏈部門顧問，持續協助新任幹部掌握市場脈絡與選題方向，確保部門運作不中斷。</p>
+            <div class="tags"><span>顧問</span><span>社團運營</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-nav">
+    <a class="button" href="index.html?skipIntro=1#work">返回作品集</a>
+    <a class="button alt" href="https://www.instagram.com/fjcu_finlab" target="_blank" rel="noopener">前往社團 Instagram ↗</a>
+  </div>
+</main>
+
+<footer>© 2026 林立勝 Li-Sheng Lin</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+},{threshold:.14,rootMargin:'0px 0px -42px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* 拼貼照片：進場彈跳 + 滑鼠移上時浮到最前（不散開） */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typeof gsap === 'undefined') return;
+  const snaps = Array.from(document.querySelectorAll('.collage .snap'));
+  const sticky = document.querySelector('.collage .sticky');
+  if (!reduce){
+    const items = sticky ? [...snaps, sticky] : snaps;
+    gsap.fromTo(items, { scale:0 },
+      { scale:1, transformOrigin:'50% 50%', stagger:0.1, ease:'elastic.out(1, 0.5)', delay:0.35 });
+  }
+  snaps.forEach(s=>{
+    s.style.cursor = 'pointer';
+    s.addEventListener('mouseenter',()=>{
+      s.style.zIndex = '30';                       // 浮到最前，不被另一張蓋住
+      if(!reduce) gsap.to(s,{ scale:1.05, duration:0.35, ease:'back.out(1.6)', overwrite:'auto' });
+    });
+    s.addEventListener('mouseleave',()=>{
+      s.style.zIndex = '';
+      if(!reduce) gsap.to(s,{ scale:1, duration:0.35, ease:'back.out(1.6)', overwrite:'auto' });
+    });
+  });
+})();
+
+/* 社團歷程照片：BounceCards（進場彈跳 + hover 散開並浮到最前） */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typeof gsap === 'undefined') return;
+  const noRot = t => /rotate\([\s\S]*?\)/.test(t)
+    ? t.replace(/rotate\([\s\S]*?\)/,'rotate(0deg)')
+    : (t === 'none' ? 'rotate(0deg)' : t + ' rotate(0deg)');
+  const pushed = (t,dx) => {
+    const r = /translate\(([-0-9.]+)px\)/;
+    const m = t.match(r);
+    if (m) return t.replace(r,`translate(${parseFloat(m[1])+dx}px)`);
+    return t === 'none' ? `translate(${dx}px)` : `${t} translate(${dx}px)`;
+  };
+  function setup(c){
+    const cards = Array.from(c.querySelectorAll('.bc-card'));
+    const bases = cards.map(x => x.style.transform || 'none');
+    let played = false;
+    const play = () => {
+      if (played) return; played = true;
+      if (reduce) return;
+      gsap.fromTo(cards, { scale:0 },
+        { scale:1, stagger:0.08, ease:'elastic.out(1, 0.5)', delay:0.1 });
+    };
+    if (!reduce){
+      cards.forEach((card,idx)=>{
+        card.addEventListener('mouseenter',()=>{
+          cards.forEach((x,i)=>{
+            gsap.killTweensOf(x);
+            x.style.zIndex = (i === idx) ? '10' : '1';
+            if (i === idx){
+              gsap.to(x,{ transform:noRot(bases[i]) + ' scale(1.55)', duration:0.4, ease:'back.out(1.4)', overwrite:'auto' });
+            } else {
+              const dx = i < idx ? -70 : 70;
+              gsap.to(x,{ transform:pushed(bases[i],dx), duration:0.4, ease:'back.out(1.4)',
+                delay:Math.abs(idx-i)*0.05, overwrite:'auto' });
+            }
+          });
+        });
+        card.addEventListener('mouseleave',()=>{
+          cards.forEach((x,i)=>{
+            gsap.killTweensOf(x);
+            x.style.zIndex = '';
+            gsap.to(x,{ transform:bases[i], duration:0.4, ease:'back.out(1.4)', overwrite:'auto' });
+          });
+        });
+      });
+    }
+    return play;
+  }
+  const players = new Map();
+  document.querySelectorAll('[data-bc]').forEach(c => players.set(c, setup(c)));
+  const io2 = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ (players.get(e.target) || (()=>{}))(); io2.unobserve(e.target); } });
+  },{ threshold:.25 });
+  players.forEach((_,c)=>io2.observe(c));
+})();
+</script>
+</body>
+</html>
