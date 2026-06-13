@@ -48,10 +48,10 @@ window.SITE_CONTENT = {
       }
     },
     {
-      "num": "26K",
+      "num": "6.1K+",
       "lbl": {
-        "zh": "單篇最高曝光",
-        "en": "Top post impressions"
+        "zh": "累積互動",
+        "en": "Total engagements"
       }
     },
     {
@@ -73,16 +73,20 @@ window.SITE_CONTENT = {
     },
     "paragraphs": [
       {
-        "zh": "長期經營內容創作，專注於新興金融與 AI 領域的市場研究。在資訊混亂的環境裡，我能快速篩選有價值的訊息，並擅長把技術性內容轉譯成一般人也能讀懂的文字。",
-        "en": "I'm Li-Sheng Lin, a Business Administration student at Fu Jen Catholic University. Through long-term content creation focused on emerging finance and AI market research, I've trained myself to filter valuable signals from noisy environments — and to translate technical content into words anyone can understand."
+        "zh": "我是一位自媒體創作者，也是一位獨立開發者。",
+        "en": "I'm a content creator and an independent developer."
       },
       {
-        "zh": "比起規劃完美再行動,我更偏好<strong>先做出雛形、邊做邊修正</strong>。雖然不是資訊背景出身,但我用 AI 工具把腦中抽象的想法做成可視化成果甚至 MVP，例如我有自架代理人(AI Agent)系統和自動化資訊流。",
-        "en": "Rather than planning everything perfectly before acting, I prefer to <strong>build a prototype first and iterate</strong>. Though not from a technical background, I use AI tools to turn abstract ideas into visible results and MVPs — from self-hosted multi-agent systems to automated information pipelines."
+        "zh": "在 AI 讓資訊唾手可得的時代，我認為真正稀缺的不是資訊本身，而是<strong>從大量雜訊中篩選有價值內容</strong>的能力，這既是我做自媒體的初衷，也是我不斷努力精進的方向。",
+        "en": "In an era where AI makes information abundant, I believe the truly scarce skill isn't information itself, but the ability to <strong>filter valuable content from noise</strong> — the reason I started creating, and what I keep sharpening."
       },
       {
-        "zh": "我相信在 AI 讓資訊唾手可得的時代，<strong>篩選、轉譯、傳遞價值</strong>的能力，正是最稀缺的東西。",
-        "en": "In an era where AI makes information abundant, I believe the scarcest skills are <strong>filtering, translating, and delivering value</strong>."
+        "zh": "我的創作內容大多集中在新興金融與 AI 領域，旨在將技術性的東西轉成一般人也能讀懂的文字，偶爾也會把一些市場調研的成果發布在上頭。另外，我非常熟悉 Prompt Engineering，擅於把腦中的想法<strong>直接做成可視化的成果</strong>，例如 AI Agent 系統，又或是一些 side project 的部署。",
+        "en": "My work centers on emerging finance and AI — translating technical topics into words anyone can read, and occasionally publishing market research. I'm also well-versed in Prompt Engineering, turning ideas in my head into <strong>visible results</strong> like AI Agent systems and various side-project deployments."
+      },
+      {
+        "zh": "如果你在找一個<strong>懂內容、懂營銷，且具執行能力</strong>的人，歡迎聯繫我。",
+        "en": "If you're looking for someone who understands <strong>content, marketing, and execution</strong>, feel free to reach out."
       }
     ],
     "skillsTitle": {
@@ -162,8 +166,8 @@ window.SITE_CONTENT = {
           "en": "Content Creation"
         },
         "title": {
-          "zh": "X (Twitter) @Tungowo1413",
-          "en": "X (Twitter) @Tungowo1413"
+          "zh": "X（Twitter）自媒體創作者",
+          "en": "X (Twitter) Content Creator"
         },
         "desc": {
           "zh": "鎖定新興金融與 AI 領域受眾，持續產出市場分析與深度文章。六個月內累積 375+ 追蹤者、總曝光突破 81 萬，建立高黏著度社群。",
@@ -185,8 +189,8 @@ window.SITE_CONTENT = {
         ],
         "link": "https://x.com/Tungowo1413",
         "linkLabel": {
-          "zh": "前往頻道",
-          "en": "Visit channel"
+          "zh": "前往 Blog",
+          "en": "Visit Blog"
         }
       },
       {
@@ -195,21 +199,21 @@ window.SITE_CONTENT = {
           "en": "AI Systems"
         },
         "title": {
-          "zh": "OpenClaw 多代理人系統",
-          "en": "OpenClaw Multi-Agent System"
+          "zh": "Side project 獨立開發者",
+          "en": "Side Project — Independent Developer"
         },
         "desc": {
-          "zh": "在 VPS 上自行部署四節點多代理人框架，整合 Gemini、Kimi、DeepSeek、MiniMax 等模型。獨立完成三個開源專案：總經數據即時警報、行事曆每日摘要、健身數據追蹤網站。",
-          "en": "Self-deployed a four-node multi-agent framework on a VPS, integrating Gemini, Kimi, DeepSeek, and MiniMax. Shipped three open-source projects: macro-data alerts, daily calendar briefs, and a fitness tracking site."
+          "zh": "與 AI 工具協作，自主架設 AI Agent 系統，並開發出多個 Skill 和 Project/Program。",
+          "en": "Working alongside AI tools to self-host AI Agent systems and build multiple Skills and Projects/Programs."
         },
         "metas": [
           {
-            "zh": "3 開源專案",
-            "en": "3 open-source projects"
+            "zh": "Side project",
+            "en": "Side project"
           },
           {
-            "zh": "VPS Self-hosted",
-            "en": "VPS Self-hosted"
+            "zh": "On-Page SEO",
+            "en": "On-Page SEO"
           },
           {
             "zh": "AI Agent",
@@ -232,21 +236,25 @@ window.SITE_CONTENT = {
           "en": "Editorial"
         },
         "title": {
-          "zh": "加密貨幣組組長 @fjcu_finlab",
-          "en": "Finance Weekly Editor @fjcu_finlab"
+          "zh": "金融研究社<br>加密貨幣組組長／區塊鏈部門顧問",
+          "en": "Finance Lab — Crypto Team Lead / Blockchain Advisor"
         },
         "desc": {
-          "zh": "擔任輔大金融投資研究社組長期間，統籌主編社團週報，主要涵蓋市場行情、主題深度分析與編輯觀點，從選題、資料收集、撰寫到排版全流程把關。",
-          "en": "As team lead at FJCU Finance Labs, edited the club's weekly report — market recaps, deep dives, and editorial takes — owning the full pipeline from topic selection and research to writing and layout."
+          "zh": "現擔任輔大金融研究社幹部，以主編的身分，統籌組內成員完成每周的週報發布，以及規劃系統性的社課講授，從選題、資料收集、撰寫到排版全流程把關。",
+          "en": "Serving as a cadre at FJCU Finance Lab. As chief editor, I coordinate team members to ship the weekly report and plan systematic club lectures — owning the full pipeline from topic selection and research to writing and layout."
         },
         "metas": [
           {
-            "zh": "每週發布",
-            "en": "Weekly cadence"
+            "zh": "社群運營",
+            "en": "Community Ops"
           },
           {
             "zh": "團隊協作",
             "en": "Team collaboration"
+          },
+          {
+            "zh": "社課教學",
+            "en": "Club teaching"
           }
         ],
         "link": "https://www.instagram.com/fjcu_finlab",
@@ -257,27 +265,18 @@ window.SITE_CONTENT = {
       },
       {
         "tag": {
-          "zh": "實體授課",
-          "en": "Teaching"
+          "zh": "",
+          "en": ""
         },
         "title": {
-          "zh": "擔任社團講師",
-          "en": "Club Lecturer — Emerging Finance"
+          "zh": "",
+          "en": ""
         },
         "desc": {
-          "zh": "獨立規劃並主講兩場社課：RWA(真實世界資產)的概念與市場應用，以及穩定幣的運作機制與全球監管趨勢。從選題、簡報製作到現場授課全程負責，單場出席逾五十人。",
-          "en": "Independently designed and delivered two club lectures — real-world assets (RWA) and stablecoin mechanics with global regulatory trends — owning everything from topic and slides to live delivery, with 50+ attendees per session."
+          "zh": "",
+          "en": ""
         },
-        "metas": [
-          {
-            "zh": "演講",
-            "en": "2 lectures"
-          },
-          {
-            "zh": "出席人數 50+",
-            "en": "50+ attendees"
-          }
-        ],
+        "metas": [],
         "link": "",
         "linkLabel": {
           "zh": "",
@@ -307,10 +306,10 @@ window.SITE_CONTENT = {
             "en": "HP HQ pitch"
           }
         ],
-        "link": "",
+        "link": "atcc.html",
         "linkLabel": {
-          "zh": "",
-          "en": ""
+          "zh": "查看專案",
+          "en": "View case"
         }
       },
       {
