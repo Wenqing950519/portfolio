@@ -825,6 +825,8 @@ function renderMain(){
 
   const works = C.work.items.map((w,i)=>{
     const metas = (w.metas || []).map(m=>`<span>${zh(m)}</span>`).join('');
+    const external = /^https?:\/\//i.test(w.link || '');
+    const linkAttrs = external ? ' target="_blank" rel="noopener"' : '';
     const body = `
       <div class="project-top"></div>
       <span class="project-tag">${zh(w.tag)}</span>
@@ -834,7 +836,7 @@ function renderMain(){
       ${w.link ? `<span class="project-link">${zh(w.linkLabel) || '前往'} ${ICONS.arrow}</span>` : ''}`;
     const attrs = `class="project-window reveal" style="transition-delay:${(i%3)*.06}s"`;
     return w.link
-      ? `<a ${attrs} href="${esc(w.link)}" target="_blank" rel="noopener">${body}</a>`
+      ? `<a ${attrs} href="${esc(w.link)}"${linkAttrs}>${body}</a>`
       : `<article ${attrs}>${body}</article>`;
   }).join('');
 
