@@ -298,7 +298,7 @@ window.SITE_CONTENT = {
           "en": "Where It Began"
         },
         "title": {
-          "zh": "whisper.story",
+          "zh": "IG 短文創作",
           "en": "whisper.story"
         },
         "desc": {
