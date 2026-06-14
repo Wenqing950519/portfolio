@@ -166,7 +166,7 @@ window.SITE_CONTENT = {
           "en": "Content Creation"
         },
         "title": {
-          "zh": "X（Twitter）自媒體創作者",
+          "zh": "X（Twitter）",
           "en": "X (Twitter) Content Creator"
         },
         "desc": {
