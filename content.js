@@ -405,7 +405,7 @@ window.SITE_CONTENT = {
       "en": "Let's build something"
     },
     "desc": {
-      "zh": "不論是內容合作、專案邀約，或是聊聊 AI 與新興金融市場 — 歡迎隨時找我。",
+      "zh": "不論是內容合作、專案邀約，或是對 AI 與新興金融市場有興趣，都歡迎隨時找我。",
       "en": "Whether it's a content collaboration, a project, or just a chat about AI and markets — feel free to reach out."
     }
   },
